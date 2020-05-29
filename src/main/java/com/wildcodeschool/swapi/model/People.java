@@ -2,6 +2,8 @@ package com.wildcodeschool.swapi.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Arrays;
+
 public class People {
 
     private String name;
@@ -26,6 +28,25 @@ public class People {
     private String url;
 
     public People() {
+    }
+
+    public People(String name, String height, String mass, String hairColor, String skinColor, String eyeColor, String birthYear, String gender, String homeworld, String[] films, String[] species, String[] vehicles, String[] starships, String created, String edited, String url) {
+        this.name = name;
+        this.height = height;
+        this.mass = mass;
+        this.hairColor = hairColor;
+        this.skinColor = skinColor;
+        this.eyeColor = eyeColor;
+        this.birthYear = birthYear;
+        this.gender = gender;
+        this.homeworld = homeworld;
+        this.films = films;
+        this.species = species;
+        this.vehicles = vehicles;
+        this.starships = starships;
+        this.created = created;
+        this.edited = edited;
+        this.url = url;
     }
 
     public String getName() {
@@ -154,5 +175,27 @@ public class People {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "People{" +
+                "name='" + name + '\'' +
+                ", height='" + height + '\'' +
+                ", mass='" + mass + '\'' +
+                ", hairColor='" + hairColor + '\'' +
+                ", skinColor='" + skinColor + '\'' +
+                ", eyeColor='" + eyeColor + '\'' +
+                ", birthYear='" + birthYear + '\'' +
+                ", gender='" + gender + '\'' +
+                ", homeworld='" + homeworld + '\'' +
+                ", films=" + Arrays.toString( films ) +
+                ", species=" + Arrays.toString( species ) +
+                ", vehicles=" + Arrays.toString( vehicles ) +
+                ", starships=" + Arrays.toString( starships ) +
+                ", created='" + created + '\'' +
+                ", edited='" + edited + '\'' +
+                ", url='" + url + '\'' +
+                '}';
     }
 }
